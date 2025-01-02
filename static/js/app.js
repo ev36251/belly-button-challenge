@@ -55,9 +55,29 @@ function buildCharts(sample) {
 
     // Render the Bubble Chart
     const bubbleLayout = {
-      title: 'Bacteria Cultures per Sample',
-      xaxis: { title: 'OTU ID' },
-      yaxis: { title: 'Sample Values' },
+      title: {
+        text: 'Bacteria Cultures per Sample',
+        font: {
+          size: 22,
+          weight: 'bold' 
+        }
+      },
+      xaxis: { 
+        title: {
+          text: 'OTU ID',
+          font: {
+            size: 16
+          }
+        }
+      },
+      yaxis: { 
+        title: {
+          text: 'Number of Bacteria',
+          font: {
+            size: 16
+          }
+        }
+      },
       showlegend: false,
       autosize: true // Makes the chart responsive
     };
@@ -89,9 +109,24 @@ function buildCharts(sample) {
 
     // Render the Bar Chart
     const barLayout = {
-      title: 'Top 10 Bacteria Cultures Found',
-      margin: { l: 100, r: 100, t: 100, b: 100 }
+      title: {
+        text: 'Top 10 Bacteria Cultures Found',
+        font: {
+          size: 22, 
+          weight: 'bold'
+        }
+      },
+      xaxis: {
+        title: {
+          text: 'Number of Bacteria',
+          font: {
+            size: 16
+          }
+        }
+      },
+      margin: { l: 90, r: 90, t: 60, b: 90 }
     };
+    
 
     Plotly.newPlot('bar', barChartData, barLayout);
   });
